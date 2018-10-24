@@ -15,18 +15,14 @@ class Converter extends Component {
 		result: null
 	};
 
-	setCurrencyExchangeFrom = currencyExchangeFrom => {
-		console.log(currencyExchangeFrom)
+	setCurrencyExchangeFrom = currencyExchangeFrom =>
 		this.setState({ currencyExchangeFrom, result: null  });
-	};
 
-	setCurrencyExchangeTo = currencyExchangeTo => {
+	setCurrencyExchangeTo = currencyExchangeTo =>
 		this.setState({ currencyExchangeTo, result: null  });
-	};
 
-	setAmountFrom = amountFrom => {
+	setAmountFrom = amountFrom =>
 		this.setState({ amountFrom, result: null });
-	};
 
 	convertCurrencies = () => {
 		const { amountFrom, currencyExchangeFrom, currencyExchangeTo } = this.state;
