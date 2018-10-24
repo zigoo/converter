@@ -1,0 +1,142 @@
+#amountPicker,
+#currencyPicker {
+	border: none;
+	outline: none;
+	width: calc(100% - 20px);
+	background-color: inherit;
+}
+
+#amountPicker {
+	width: calc(100% - 10px);
+}
+
+#amountPicker::-webkit-outer-spin-button,
+#amountPicker::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.amount-picker {
+	min-width: 50px;
+	flex: 0 0 20%;
+	margin-right: 5px;
+	align-self: flex-start;
+}
+
+ul.currency-selector {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: thin solid transparent;
+	border-top: none;
+	overflow-y: auto;
+	max-height: 0;
+	opacity: 0;
+	transition: all 0.45s;
+	z-index: 5;
+}
+
+.open > ul.currency-selector {
+	width: 99.2%;
+	max-height: 200px;
+	border: thin solid #ccc;
+	border-top: none;
+	opacity: 1;
+	overflow-y: auto;
+	transition: all 0.3s ease-in;
+}
+
+li.currency-selector {
+	display: flex;
+	cursor: pointer;
+	padding: 0 5px;
+	z-index: 5;
+}
+
+li.currency-selector:hover {
+	background-color: #e7e7e7;
+}
+
+.currency-selector-wrapper {
+	flex: 1 1 80%;
+	min-width: 0;
+}
+
+.currency-selector-align_left {
+	flex: 1 1 90%;
+}
+.currency-selector-align_right {
+	flex: 1 0 10%;
+}
+
+.convert-button,
+.amount-picker-input,
+.currency-picker-input {
+	border: thin solid #ccc;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.convert-button {
+	background-color: #729ecc;
+	color: white;
+	height: 30px;
+	max-height: 30px;
+	margin-left: 5px;
+	align-self: flex-start;
+	outline: none;
+}
+.convert-button:hover {
+	background-color: salmon;
+	color: white;
+	cursor: pointer;
+}
+
+.amount-picker-input {
+	align-self: flex-start;
+}
+
+.open > .currency-picker-input {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.amount-picker-input span,
+.currency-picker-input span {
+	position: relative;
+	left: 12px;
+	cursor: pointer;
+}
+
+.amount-picker-input span {
+	left: 4px;
+}
+
+.currency-picker-input span:active {
+	color: red;
+}
+
+.span-as-a-block {
+	display: block;
+}
+
+.currency-picker-panel {
+	flex: 1 0 50%;
+	min-width: 50%;
+}
+
+.currency-picker-panel:first-of-type {
+	margin-right: 5px;
+}
+
+.flex-wrap {
+	display: flex;
+}
+
+.main-wrapper {
+	display: flex;
+	justify-content: center;
+	width: 45%;
+	margin: 0 auto;
+}
