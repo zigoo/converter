@@ -24,17 +24,11 @@ export const enableBatchActions = reducer => {
 
 const mainReducer = (state = initialState, action) => {
 	if (action.type === FETCH_START) {
-			return {
-			...state,
-			loading: true
-		}
+			return { ...state, loading: true }
 	}
 
 	if (action.type === FETCH_FINISH) {
-		return {
-			...state,
-			loading: false
-		}
+		return { ...state, loading: false }
 	}
 
 	if (action.type === FETCH_CURRENCIES_SUCCESS) {
@@ -60,10 +54,7 @@ const mainReducer = (state = initialState, action) => {
 			}
 		});
 
-		return {
-			...state,
-			symbols: iterableCurrencies
-		};
+		return { ...state, symbols: iterableCurrencies };
 	}
 
 	if (action.type === FETCH_CURRENCIES_ERROR) {
