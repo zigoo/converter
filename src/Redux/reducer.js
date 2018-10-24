@@ -1,7 +1,5 @@
 import {
 	BATCH_ACTIONS,
-	FETCH_START,
-	FETCH_FINISH,
 	FETCH_CURRENCIES_ERROR,
 	FETCH_CURRENCIES_SUCCESS,
 	FETCH_SYMBOLS_SUCCESS
@@ -23,14 +21,6 @@ export const enableBatchActions = reducer => {
 };
 
 const mainReducer = (state = initialState, action) => {
-	if (action.type === FETCH_START) {
-			return { ...state, loading: true }
-	}
-
-	if (action.type === FETCH_FINISH) {
-		return { ...state, loading: false }
-	}
-
 	if (action.type === FETCH_CURRENCIES_SUCCESS) {
 		return {
 			...state,
@@ -58,9 +48,7 @@ const mainReducer = (state = initialState, action) => {
 	}
 
 	if (action.type === FETCH_CURRENCIES_ERROR) {
-		return {
-			error: true
-		}
+		return {error: true }
 	}
 
 	return state;
