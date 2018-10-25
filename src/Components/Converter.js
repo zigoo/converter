@@ -4,7 +4,6 @@ import AmountInput from "./AmountInput.js";
 import {
 	ColoredSpan,
 	PanelBlock,
-	Spinner,
 	getCurrencyDescription
 } from "./helpers";
 
